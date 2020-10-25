@@ -3,19 +3,30 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@material-ui/core": "^4.11.0",
+    "@material-ui/icons": "^4.9.1",
+    "@material-ui/lab": "^4.0.0-alpha.56",
     "@testing-library/jest-dom": "^5.11.5",
     "@testing-library/react": "^11.1.0",
     "@testing-library/user-event": "^12.1.10",
+    "axios": "^0.21.0",
+    "concurrently": "^5.3.0",
+    "electron-builder": "^22.9.1",
+    "node-notifier": "^8.0.0",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
     "react-scripts": "4.0.0",
+    "wait-on": "^5.2.0",
     "web-vitals": "^0.2.4"
   },
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "start-react": "react-scripts start",
+    "build-react": "react-scripts build",
+    "test-react": "react-scripts test --env=jsdom",
+    "eject-react": "react-scripts eject",
+    "build-electron": "electron-builder",
+    "build": "yarn build-react && yarn build-electron",
+    "start": "concurrently \"cross-env BROWSER=none yarn start-react\" \"wait-on http://localhost:3000 && electron .\""
   },
   "eslintConfig": {
     "extends": [
@@ -34,5 +45,11 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
-  }
+  },
+  "devDependencies": {
+    "cross-env": "^7.0.2",
+    "electron": "10.1.5",
+    "electron-is-dev": "^1.2.0"
+  },
+  "main": "public/main.js"
 }

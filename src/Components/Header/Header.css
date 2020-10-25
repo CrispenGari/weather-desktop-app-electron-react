@@ -1,0 +1,46 @@
+.header {
+  background-color: black;
+  color: white;
+  position: sticky;
+  top: 0;
+  width: 100%;
+  padding: 5px;
+  max-height: 50px;
+  height: 50px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.header__appname {
+  display: flex;
+  cursor: pointer;
+  align-items: center;
+}
+.header__appname > .MuiSvgIcon-root {
+  color: lightseagreen !important;
+  margin-left: 10px;
+}
+.header__appname > h1 {
+  text-transform: uppercase;
+  font-size: 15px;
+  font-weight: 500;
+  cursor: pointer;
+  letter-spacing: 1.5px;
+}
+.header__location {
+  display: flex;
+  align-items: center;
+}
+.header__location > h1 {
+  text-transform: uppercase;
+  font-size: 12px;
+  font-weight: 400;
+  cursor: pointer;
+  letter-spacing: 1.5px;
+  margin-right: 10px;
+}
+.header__location > .MuiSvgIcon-root {
+  color: red !important;
+  cursor: pointer;
+  margin-right: 10px;
+}
